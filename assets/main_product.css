@@ -1,0 +1,44 @@
+.navbar .container {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+ 
+
+.product-image img {
+    width:70%;
+    height: 75%;
+    background-color: blue;
+    
+}
+
+
+.product-description {
+    max-width: 720px;
+    background-color: beige;
+    margin-left: -120px;
+    margin-top:20px ;
+}
+
+ 
+.product {
+    
+    margin-bottom: 50px;
+    align-items:flex-start;
+   
+    display: flex;
+    
+}
+
+.product-title {
+     
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 70px;
+}
+
+.product-details {
+      
+    line-height: 30px;
+    margin-bottom: 30px;
+}

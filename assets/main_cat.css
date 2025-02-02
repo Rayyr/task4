@@ -1,0 +1,38 @@
+body{
+     
+   
+    height: 2000px;
+}
+
+.cont{
+    position: sticky;
+    top:0;
+}
+.cont .cat    {
+    
+    padding: 20px 40px;
+    
+    color:black;
+    text-transform: capitalize;
+
+    .details{
+        
+        text-align: center;
+        display: none;
+        a{
+        text-decoration: none;
+        }
+    }
+  
+}
+
+.togle{
+    
+   
+        display: block !important;
+     
+ }
+
+ 
+
+ 
