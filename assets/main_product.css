@@ -1,34 +1,115 @@
-.navbar .container {
-    text-align: center;
-    text-transform: capitalize;
-}
-
  
+ .disableBodyScroll{
+  overflow:hidden;
+ }
 
-.product-image img {
-    width:70%;
-    height: 75%;
-    background-color: blue;
+.container {
+
+    margin-top: 0px !important;
     
 }
 
 
-.product-description {
-    max-width: 720px;
-    background-color: beige;
-    margin-left: -120px;
-    margin-top:20px ;
+.navbar{
+    position: sticky;
+    top: 0;
+    
+    background-color: black;
+}
+
+.navbar:hover .container{
+ 
+ color:#FAFA33;
+}
+
+
+.navbar .container {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 70px;
+    padding: 17px 17px;
+    font-family: "Roboto Mono", serif ;
+    font-size:  small;
+    color: white;
 }
 
  
 .product {
     
-    margin-bottom: 50px;
-    align-items:flex-start;
+  margin-bottom: 150px;
+  align-items: stretch;
+  display: flex;
    
-    display: flex;
-    
+
 }
+
+
+.product-image   {
+    width:50%;
+  min-height: 100%;
+   
+  
+ display: flex;
+ 
+    
+ 
+}
+ 
+.overlay {
+ 
+  border-radius: 20px;
+  width: 50%;
+  height: 80%;
+  margin-left: -360px;;
+  opacity: 0;
+  transition: opacity .3s ease;
+  background-color: rgba(0, 0, 0,.17); /* Semi-transparent background */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+ 
+}
+
+ 
+.overlay-text {  
+  color:#FAFA33;
+  font-size: 37px;
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.overlay:hover   {
+  opacity: 1 ;
+  cursor: pointer;
+
+}
+
+.overlay-text:hover   {
+  opacity: 1 ;
+  cursor:default;
+
+}
+
+ 
+.product-image img {
+    width:50%;
+    height: 80%;
+    border-radius: 20px;
+  
+   
+}
+ 
+
+.product-description {
+    max-width: 720px;
+    margin-left: -120px;
+    min-height: 100%;
+   
+}
+
+    
 
 .product-title {
      
@@ -37,8 +118,153 @@
     margin-bottom: 70px;
 }
 
+
 .product-details {
-      
+    
     line-height: 30px;
     margin-bottom: 30px;
+}
+
+
+.no_display{
+    display: none !important;
+} 
+
+
+.loading{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+    width:100%
+} 
+
+  
+.loader {
+    animation: rotate 2s infinite;
+    height: 50px;
+    width: 50px;
+}
+
+  .loader:before,
+  .loader:after {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+  .loader:before {
+    animation: box1 2s infinite;
+    background-color: #FAFA33;
+    box-shadow: 30px 0 0 black;
+    margin-bottom: 10px;
+  }
+  .loader:after {
+    animation: box2 2s infinite;
+    background-color: black;
+    box-shadow: 30px 0 0 #FAFA33;
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg) scale(0.8) }
+    50% { transform: rotate(360deg) scale(1.2) }
+    100% { transform: rotate(720deg) scale(0.8) }
+  }
+
+  @keyframes box1 {
+    0% {
+      box-shadow: 30px 0 0 black;
+    }
+    50% {
+      box-shadow: 0 0 0 black;
+      margin-bottom: 0;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 black;
+      margin-bottom: 10px;
+    }
+  }
+
+  @keyframes box2 {
+    0% {
+      box-shadow: 30px 0 0 #FAFA33;
+    }
+    50% {
+      box-shadow: 0 0 0 #FAFA33;
+      margin-top: -20px;
+      transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 #FAFA33;
+      margin-top: 0;
+    }
+  }
+
+ 
+.modal{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8); 
+  position:fixed;
+  top:0px;
+  left: 0px;
+  display: none;
+  
+}
+
+.modal .img{
+  background-color: white;
+  padding: 40px 60px;
+  height: 50%;
+  border-radius: 20px;
+  position: relative;
+  
+}
+
+ 
+.modal .img img{
+  
+  max-width: 100%;   
+  max-height: 100%; 
+  transition: transform 0.3s ease;
+ 
+}
+
+.modal .controls{
+  
+  position: absolute;
+  display:flex;
+   
+  gap: 30px;
+  color:black
+ 
+  
+}
+
+.modal .img i:hover{
+ 
+ cursor: pointer;
+   
+ }
+
+.modalDisplay{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  
+  gap: 30px;
+  button{
+
+    padding: 8px 13px;
+  }
 }
