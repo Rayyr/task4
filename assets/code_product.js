@@ -17,6 +17,7 @@ function stars() {
 async function getProduct(page) {
     let response;
     let limit=2;
+     
     const skippedElements=(page-1)*limit ;
     /* the products will be shown are depends on the clicked category so the category will be variable 
        in the URL */
@@ -26,7 +27,7 @@ async function getProduct(page) {
         response = await fetch(`https://fakestoreapi.com/products/category/${catVar}?limit=2&skip=${skippedElements}`, { method: "GET" });
         w = await fetch(`https://fakestoreapi.com/products/category/${catVar}`, { method: "GET" });
 
-        items=await w.json() ;
+        const items=await w.json() ;
         itemsTotalNum=items.length;
         
     }
@@ -45,12 +46,10 @@ async function getProduct(page) {
 
 async function displayProductsOfCategory(page=1) {
 
-    console.log(page);
+   
     const realData = await getProduct(page);
     let numOfPages=itemsTotalNum /2;
-
-    
-
+ 
     if (realData == undefined) {
         console.log("No Products found :)");
         return;
@@ -103,9 +102,7 @@ async function displayProductsOfCategory(page=1) {
             let btn=`<button>${i}</button>`;
             let litem=`<li>${btn}</li>`;
          
-  
             butnsOfPages.innerHTML+=litem;
-         
             
         }
         butnsOfPages.innerHTML+=`<li><button>&gt</button></li>`;
@@ -115,14 +112,15 @@ async function displayProductsOfCategory(page=1) {
         for(let i=1;i<(btns.length-1);i++){
            
            btns[i].addEventListener("click",( )=>{
-            console.log(btns[i]);
-            console.log(i);
+            btns[i].setAttribute("style", "background-color: red");
            displayProductsOfCategory(i);
+          
            });
-        } 
-        
-       
+        }
 
+        //current btn activation
+        btns[page].setAttribute("style", "background-color: red");
+        
     }
     catch (occured_error) {
         console.log("Sorry , Try Again Later :)");
